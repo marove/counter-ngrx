@@ -6,5 +6,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'counter-ngrx';
+
+  counter: number;
+
+  constructor() {
+    this.counter = 10;
+  }
+
+  increase() {
+    this.counter ++;
+  }
+
+  decrease() {
+    this.counter --;
+  }
+
 }
