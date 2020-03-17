@@ -16,13 +16,11 @@ export class AppComponent {
   counter: number;
 
   constructor(private store: Store<AppState>) {
-    this.store.subscribe(state => {
-      this.counter = state.counter;
-    })
+    this.store.select('counter').subscribe(counter => this.counter = counter)
   }
 
   increase() {
-    this.store.dispatch( actions.increaseAction());
+    this.store.dispatch(actions.increaseAction());
   }
 
   decrease() {
